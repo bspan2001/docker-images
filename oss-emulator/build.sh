@@ -1,9 +1,10 @@
 #!/bin/bash -ex
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+IMAGE_NAME=szewec/${DIR##*/}
 
-docker build -t "szewec/ruby:latest" --force-rm "$DIR/latest"
+docker build -t "${IMAGE_NAME}:latest" --force-rm "${DIR}/latest"
 
 if [[ "$PUSH_IMAGES" = "true" ]]; then
-  docker push "szewec/ruby:latest"
+  docker push "${IMAGE_NAME}:latest"
 fi

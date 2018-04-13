@@ -1,4 +1,4 @@
-FROM szewec/ruby
+FROM szewec/ruby:2.0
 
 RUN gem install thor builder \
     && git clone https://github.com/aliyun/oss-emulator.git /root/oss-emulator

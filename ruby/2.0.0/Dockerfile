@@ -1,4 +1,4 @@
-FROM szewec/centos
+FROM szewec/centos:7.3
 
 ENV RUBY_MAJOR 2.0
 ENV RUBY_VERSION 2.0.0.648
