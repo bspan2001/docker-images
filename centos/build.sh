@@ -3,6 +3,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 IMAGE_NAME=szewec/${DIR##*/}
 
+docker pull "${IMAGE_NAME}:7.3.1611" || true
+
 docker build -t "${IMAGE_NAME}:7.3.1611" -t "${IMAGE_NAME}:7.3" -t "${IMAGE_NAME}:latest" --force-rm "${DIR}/7.3.1611"
 
 if [[ "$PUSH_IMAGES" = "true" ]]; then
