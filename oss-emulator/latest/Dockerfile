@@ -1,7 +1,7 @@
 FROM szewec/ruby
 
 RUN gem install thor builder \
-    && git clone https://github.com/aliyun/oss-emulator.git /root/oss-emulator \
+    && git clone https://github.com/aliyun/oss-emulator.git /root/oss-emulator
 
 WORKDIR /root
 VOLUME /root/oss-emulator/
