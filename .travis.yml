@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  global:
+    - PUSH_IMAGES=true
+
+script:
+  - ./build-all.sh
