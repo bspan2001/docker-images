@@ -7,7 +7,6 @@ env:
   global:
     - CACHE_DIR=/home/travis/.docker/cache
     - ENABLE_CACHE=true
-    - PULL_IMAGES=true
     - PUSH_IMAGES=true
 
 before_script:
