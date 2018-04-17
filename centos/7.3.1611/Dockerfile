@@ -7,3 +7,6 @@ RUN yum update -y \
     wget \
     git \
     && yum clean all
+
+# change timezone
+RUN rm /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
