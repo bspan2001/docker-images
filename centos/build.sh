@@ -15,11 +15,7 @@ fi
 
 if [[ "$PULL_IMAGES_ONLY" != "true" ]]; then
   # build docker image with multiple tags
-  docker build -t "${IMAGE_NAME}:7.3.1611" \
-               -t "${IMAGE_NAME}:7.3" \
-               -t "${IMAGE_NAME}:latest" \
-               --force-rm \
-               "${DIR}/7.3.1611"
+  docker build -t "${IMAGE_NAME}:7.3.1611" -t "${IMAGE_NAME}:7.3" -t "${IMAGE_NAME}:latest" --force-rm "${DIR}/7.3.1611"
 
   if [[ "$ENABLE_CACHE" = "true" ]]; then
     # save docker image to cache dir
