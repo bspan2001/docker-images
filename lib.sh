@@ -9,15 +9,16 @@
 #   source lib.sh
 #
 
-PUSH_IMAGES=${PUSH_IMAGES:-false}
+ENABLE_CACHE=${PULL_IMAGES:-false}
 PULL_IMAGES=${PULL_IMAGES:-false}
 PULL_IMAGES_ONLY=${PULL_IMAGES_ONLY:-false}
+PUSH_IMAGES=${PUSH_IMAGES:-false}
 
 for i in "$@"
 do
   case $i in
-    --push-images)
-      PUSH_IMAGES="true"
+    --enable-cache)
+      ENABLE_CACHE="true"
       shift
     ;;
     --pull-image)
@@ -27,6 +28,10 @@ do
     --pull-image-only)
       PULL_IMAGES="true"
       PULL_IMAGES_ONLY="true"
+      shift
+    ;;
+    --push-images)
+      PUSH_IMAGES="true"
       shift
     ;;
     --help)

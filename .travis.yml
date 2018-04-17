@@ -5,11 +5,20 @@ services:
 
 env:
   global:
+    - CACHE_DIR=/home/travis/.docker/cache
+    - ENABLE_CACHE=true
     - PULL_IMAGES=true
     - PUSH_IMAGES=true
 
 before_script:
+  # login docker hub
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  # restore last builds from cache dir
+  - mkdir -p $CACHE_DIR && find $CACHE_DIR -name *.tar | xargs -r -I '{}' docker import '{}'
 
 script:
   - ./build-all.sh
+
+cache:
+  directories:
+    - $CACHE_DIR
