@@ -20,7 +20,7 @@ if [[ "$PULL_IMAGES_ONLY" != "true" ]]; then
   if [[ "$ENABLE_CACHE" = "true" ]]; then
     # save docker image to cache dir
     mkdir -p ${CACHE_DIR}/szewec
-    docker save -o "${CACHE_DIR}/${IMAGE_NAME}-7.3.1611.tar" "${IMAGE_NAME}:7.3.1611"
+    docker save -o "${CACHE_DIR}/${IMAGE_NAME}-latest.tar" "${IMAGE_NAME}:latest"
   fi
 fi
 
