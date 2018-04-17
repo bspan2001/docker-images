@@ -5,6 +5,7 @@ services:
 
 env:
   global:
+    - PULL_IMAGES=true
     - PUSH_IMAGES=true
 
 before_script:
